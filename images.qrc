@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/img">
+        <file alias="logo.bmp">../../../home/alex/Загрузки/logo_mp.bmp</file>
+        <file alias="logo.png">../../../home/alex/Загрузки/logo.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>qml.qml</file>
+    </qresource>
+</RCC>
