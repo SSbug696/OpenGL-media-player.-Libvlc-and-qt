@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>../../../home/alex/Загрузки/logo_mp.bmp</file>
-    </qresource>
-    <qresource prefix="/img">
-        <file>../../../home/alex/Загрузки/logo.png</file>
-    </qresource>
-</RCC>
