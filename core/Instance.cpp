@@ -5,8 +5,7 @@
 #include "Filters.h"
 
 
-Instance::Instance(std::vector<const char *> & filters)
-{
+Instance::Instance(std::vector<const char *> & filters){
     const char * argv[filters.size()];
     for(int i=0;i<=filters.size();i++){
         argv[i]=filters[i];

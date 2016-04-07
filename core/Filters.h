@@ -24,9 +24,10 @@ public:
         P_DROP_LATE_FRAME=13,
         P_ANAGLYPH_FILTER=14;
 
+        std::vector<const char *> & getArgv();
+
 
     Filters();
-    std::vector<const char *> & getArgv();
     void setFilter(int);
     void removeFilter(int);
     void updateListFilters();

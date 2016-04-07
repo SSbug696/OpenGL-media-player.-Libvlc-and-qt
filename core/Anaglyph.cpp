@@ -20,8 +20,7 @@ Anaglyph::Anaglyph(float Convergence,
 }
 
 
-void Anaglyph::ApplyLeftFrustum()
-{
+void Anaglyph::ApplyLeftFrustum() {
 
     if(_flag & 2) {
         top     = _ltop;

@@ -2,8 +2,7 @@
 #define ANAGLYPH_H
 
 
-class Anaglyph
-{
+class Anaglyph {
 public:
     Anaglyph(float, float, float, float, float, float);
     void ApplyLeftFrustum();

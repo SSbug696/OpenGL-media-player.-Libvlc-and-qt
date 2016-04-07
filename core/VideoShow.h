@@ -17,8 +17,7 @@ class StereoCamera;
 class Anaglyph;
 
 
-class VideoShow : public QGLWidget, protected QGLFunctions
-{
+class VideoShow : public QGLWidget, protected QGLFunctions {
     Q_OBJECT
 
 protected:

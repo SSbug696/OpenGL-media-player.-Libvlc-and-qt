@@ -43,8 +43,7 @@ QMutex mutex;
  * \brief Interface::Interface
  * \param mp
  */
-Interface::Interface(Player * mp)
-{
+Interface::Interface(Player * mp){
     //_videoSlider =  new VideoSlider(mp);
     _videoWindow =  new VideoWindow(mp);
     _controlPanel = new ControlPanel(mp);
@@ -100,19 +99,17 @@ void Interface::changeRatio(){
  * \brief Interface::mute
  */
 void Interface::mute(){
-     ptrP->mediaPlayer->audio()->toogleMute();
+    ptrP->mediaPlayer->mute();
 }
 
 
 void Interface::triggerSliderMove(){
-         qDebug() << "event!!! \n";
-
+    qDebug() << "slide \n";
 }
 
 
 void Interface::openEvent(){
-          std::cout << "open event \n" << std::endl;
-
+    qDebug() << "open event \n";
 }
 
 void Interface::fullscreen(){
@@ -169,12 +166,6 @@ void Interface::outFinishedEvent(){
 void Interface::timeChangeEvent(){
     getLastTime();
 }
-
-void Interface::enabled3d(){
-
-    //ptrP->filters->toogleFilter(Filters::P_ANAGLYPH_FILTER);
-}
-
 
 void Interface::updateStatusControlPanel(){
     timer = new QTimer(this);
@@ -285,9 +276,8 @@ void Interface::resizeEvent(QResizeEvent * event){
 /*!
  * \brief Interface::valueChange
  */
-void Interface::valueChange(int currentVolume)
-{
-    ptrP->mediaPlayer->audio()->setVolume(currentVolume);
+void Interface::valueChange(int currentVolume){
+    ptrP->mediaPlayer->voice(currentVolume);
 }
 
 /*!
@@ -300,13 +290,13 @@ void Interface::trackSlider()
 }
 
 
-void Interface::eventsEmitter(QString event="default"){
+void Interface::eventsEmitter(QString event = "default"){
 }
 
 // Pause and flush data from memory
 void Interface::pause(){
     // Get current time
-    _time_stopped=ptrP->mediaPlayer->getTime();
+    _time_stopped = ptrP->mediaPlayer->getTime();
     // Add 100ms for remove time event. It's just simple hack =)
     _time_stopped += 100;
     // Get path to stopped movie

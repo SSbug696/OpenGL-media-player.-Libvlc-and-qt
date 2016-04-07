@@ -29,8 +29,7 @@ Media::Media(Instance * instance, QString path){
  * \param localFile
  * \param instance
  */
-void Media::Init(Instance *inst, QString & path)
-{
+void Media::Init(Instance *inst, QString & path){
     _instance = inst->getInstance();
     _locationSource = path;
     _media = libvlc_media_new_path(inst->getInstance(), path.toUtf8().data());

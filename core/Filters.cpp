@@ -2,8 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <QString>
-Filters::Filters()
-{
+Filters::Filters(){
     _filters_collection[QString("no-filter")] = 0;
     //_filters_collection[QString("anaglyph-filter")]=14;
 
@@ -64,7 +63,7 @@ void Filters::toogleFilter(int id){
 }
 
 
-void Filters::removeFilter(int id){
+void Filters::removeFilter(int id ){
     if(std::find(_activeFilters.begin(), _activeFilters.end(), id) != _activeFilters.end()){
         _activeFilters.erase(_activeFilters.begin()+1);
         updateListFilters();

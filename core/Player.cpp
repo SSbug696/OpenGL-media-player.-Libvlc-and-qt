@@ -11,8 +11,7 @@ using namespace std;
 
 Player::Player(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Player)
-{
+    ui(new Ui::Player){
 #ifdef Q_WS_X11
     if(QX11Info::isCompositingManagerRunning())
         setAttribute(Qt::WA_TranslucentBackground);
@@ -45,8 +44,7 @@ Player::Player(QWidget *parent) :
 }
 
 
-Player::~Player()
-{
+Player::~Player(){
     delete mediaPlayer;
     delete interface;
     delete video;
@@ -57,8 +55,7 @@ Player::~Player()
 void Player::updateInstance(){}
 
 
-void Player::resizeEvent(QResizeEvent * resizeEvent)
-{
+void Player::resizeEvent(QResizeEvent * resizeEvent){
     emit emitResizeEvent(resizeEvent);
 }
 

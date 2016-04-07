@@ -56,5 +56,5 @@ HEADERS  += \
 FORMS    += forms/player.ui
 
 RESOURCES += \
-    images.qrc
+
 

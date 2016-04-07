@@ -3,17 +3,14 @@
 
 #include <QObject>
 
-
 struct libvlc_event_t;
 struct libvlc_event_manager_t;
 struct libvlc_media_t;
 struct libvlc_media_player_t;
-
 struct Mediaplayer;
 
 
-class DelegateControl : public QObject
-{
+class DelegateControl : public QObject {
     Q_OBJECT
 public:
    // explicit DelegateControl(QObject *parent = 0);

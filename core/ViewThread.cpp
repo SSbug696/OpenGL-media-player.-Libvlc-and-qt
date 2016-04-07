@@ -11,7 +11,7 @@ void ViewThread::nextFrame(){
 
 void ViewThread::run(){
     timer = new QTimer(this);
-    //it's framerate
+    //it's framerate (1000/24 fps)
     timer->start(24);
     connect(timer, SIGNAL(timeout()), this, SLOT(nextFrame()));
 }

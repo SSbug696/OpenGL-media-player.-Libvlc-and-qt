@@ -2,8 +2,7 @@
 #define OPTIONS_H
 
 
-class Options
-{
+class Options {
 public:
     Options();
 };

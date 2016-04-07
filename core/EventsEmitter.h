@@ -9,13 +9,11 @@
 struct libvlc_event_t;
 class  Interface;
 
-class EventsEmitter : public QObject
-{
+class EventsEmitter : public QObject {
     Q_OBJECT
 
 private:
     Interface * _interface;
-
 
 public:
     explicit EventsEmitter(QObject *parent = 0);

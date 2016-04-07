@@ -15,8 +15,7 @@ class Instance;
 /*!
  * \brief The Media class
  */
-class Media : public QObject
-{
+class Media : public QObject {
     Q_OBJECT
 public:
      Media(Instance *, QString);

@@ -11,8 +11,7 @@ struct libvlc_media_list_t;
 /*!
  * \brief The Video class
  */
-class Video : public QObject
-{
+class Video : public QObject {
     Q_OBJECT
 public:
     explicit Video(QObject *parent = 0);

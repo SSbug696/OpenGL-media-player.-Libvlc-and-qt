@@ -17,6 +17,7 @@
 #include <strstream>
 #include <sstream>
 #include <thread>
+#include <memory>
 
 #include <QMutex>
 #include <QtCore>
@@ -39,13 +40,6 @@ const int HEIGHT = 5000;
 unsigned char * data_pixels = new unsigned char[ WIDTH *  HEIGHT * 3];
 
 bool status=false;
-struct ctx
-{
-    uchar* pixels;
-    QMutex* mutex;
-};
-
-ctx cx;
 
 /*!
  * \brief MediaPlayer::MediaPlayer
@@ -56,11 +50,11 @@ MediaPlayer::MediaPlayer(Instance * instance){
     _mp =  libvlc_media_player_new(instance->getInstance());
     _instance = instance;
     _mpEvents = libvlc_media_player_event_manager(_mp);
-    _mpVideo  = new Video(_mp);
-    _mpAudio  = new Audio(_mp);
-    state=0;
 
-    cx.mutex = new QMutex();
+    _mpVideo =  std::unique_ptr<Video> (new Video(_mp));
+    _mpAudio  = std::unique_ptr<Audio> (new Audio(_mp));
+
+    state=0;
     pix   = data_pixels;
 }
 
@@ -71,27 +65,26 @@ void MediaPlayer::release(){
 }
 
 
-MediaPlayer::~MediaPlayer()
-{   
-    delete _mpAudio;
-    delete _mpVideo;
-}
-
-/*!
- * \brief MediaPlayer::video
- * \return
- */
-Video * MediaPlayer::video(){
-    return _mpVideo;
+MediaPlayer::~MediaPlayer(){   
+    release();
 }
 
 
 /*!
- * \brief MediaPlayer::audio
+ * \brief MediaPlayer::voice
  * \return
  */
-Audio * MediaPlayer::audio(){
-    return _mpAudio;
+void MediaPlayer::voice(int val){
+    _mpAudio->setVolume(val);
+}
+
+
+/*!
+ * \brief MediaPlayer::mute
+ * \return
+ */
+void MediaPlayer::mute(){
+    _mpAudio->toogleMute();
 }
 
 /*!
@@ -117,8 +110,7 @@ Media * MediaPlayer::getCurentMedia() const{
  * \brief MediaPlayer::length
  * \return
  */
-int MediaPlayer::length() const
-{
+int MediaPlayer::length() const {
     libvlc_time_t length = libvlc_media_player_get_length(_mp);
     return length;
 }
@@ -127,7 +119,7 @@ int MediaPlayer::length() const
  * \brief MediaPlayer::getTime
  * \return
  */
-int MediaPlayer::getTime() const{
+int MediaPlayer::getTime() const {
     libvlc_time_t time = libvlc_media_player_get_time(_mp);
     return time;
 }
@@ -145,9 +137,7 @@ unsigned char * MediaPlayer::getPixels(){
 }
 
 
-
-void print(std::string::size_type n, std::string const &s)
-{
+void print(std::string::size_type n, std::string const &s){
     if (n == std::string::npos) {
         std::cout << "not found\n";
     } else {
@@ -156,7 +146,7 @@ void print(std::string::size_type n, std::string const &s)
 }
 
 
-std::string ssystem (const char *command) {
+std::string ssystem (const char *command){
     char tmpname [L_tmpnam];
     std::tmpnam ( tmpname );
     std::string scommand = command;
@@ -196,8 +186,7 @@ void unlock( void *data, void *id, void *const *ipixels )
     }
 */
 
-void task1(libvlc_media_player_t *_mp , libvlc_media_t * media, int w, int h)
-{
+void task1(libvlc_media_player_t *_mp , libvlc_media_t * media, int w, int h){
     libvlc_media_player_set_media(_mp, media);
 //UYVY YUYV
     libvlc_video_set_format( _mp, "YUYV", w, h, w/2 * 4);

@@ -12,8 +12,7 @@
 class VideoShow;
 class Player;
 
-class ViewThread : public QObject
-{
+class ViewThread : public QObject {
     Q_OBJECT
 public:
     QPointer<QGLContext> glContext;

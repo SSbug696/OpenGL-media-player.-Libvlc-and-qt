@@ -31,8 +31,7 @@ namespace Ui {
 class Player;
 }
 
-class Player : public QMainWindow
-{
+class Player : public QMainWindow {
     Q_OBJECT
 
 public:

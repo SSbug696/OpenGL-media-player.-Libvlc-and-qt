@@ -8,8 +8,7 @@ struct libvlc_media_player_t;
 /*!
  * \brief The Audio class
  */
-class Audio
-{
+class Audio {
 public:
     Audio(libvlc_media_player_t *);
     ~Audio();

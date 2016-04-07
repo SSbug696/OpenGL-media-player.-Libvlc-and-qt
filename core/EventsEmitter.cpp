@@ -10,7 +10,7 @@ EventsEmitter::EventsEmitter(QObject *parent) : QObject(parent)
 {}
 
 
-EventsEmitter::EventsEmitter(Interface * interface){
+EventsEmitter::EventsEmitter(Interface * interface) {
     _interface = interface;
     e_emitter = this;
     events = libvlc_media_player_event_manager(_interface->ptrP->mediaPlayer->getInstance());
@@ -18,7 +18,7 @@ EventsEmitter::EventsEmitter(Interface * interface){
 }
 
 
-void EventsEmitter::bindEvents(){
+void EventsEmitter::bindEvents() {
     this->connect(this, SIGNAL(Playing()), _interface, SLOT(updateStatusControlPanel()));
     QList<libvlc_event_e> list;
     list << libvlc_MediaPlayerMediaChanged

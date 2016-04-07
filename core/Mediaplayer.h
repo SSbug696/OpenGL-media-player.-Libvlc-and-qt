@@ -9,7 +9,7 @@
 #include "ui_player.h"
 #include "Player.h"
 #include <QMutex>
-
+#include <memory>
 
 class Instance;
 class Media;
@@ -26,15 +26,11 @@ struct libvlc_media_list_player_t;
 /*!
  * \brief The MediaPlayer class
  */
-class MediaPlayer: public QObject
-{
+class MediaPlayer: public QObject {
     Q_OBJECT
 public:
     MediaPlayer(Instance *);
     ~MediaPlayer();
-
-    Video * video();
-    Audio * audio();
 
     static unsigned char * pixels;
 
@@ -49,14 +45,15 @@ public:
     void error();
 
     libvlc_media_player_t 	* _mp;
-    Video * _mpVideo;
+    std::unique_ptr<Video> _mpVideo;
+    std::unique_ptr<Audio> _mpAudio;
     Media * _mpMedia;
-    Audio * _mpAudio;
     QString pathToResource;
     Instance * _instance;
 
     int getHeight();
     int getWidth();
+
     unsigned char * getPixels();
 
     int width_view,
@@ -64,12 +61,14 @@ public:
     unsigned char * pix;
     int state;
 
+
+    void voice(int);
+    void mute();
+
 public slots:
     void pause();
     void seek();
     void release();
-
-    //char * path;
 
 private slots:
 

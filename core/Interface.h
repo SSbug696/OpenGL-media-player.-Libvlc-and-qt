@@ -5,7 +5,6 @@
 #include <QResizeEvent>
 #include <QThread>
 
-
 class Player;
 class VideoSlider;
 class VideoWindow;
@@ -20,8 +19,7 @@ struct libvlc_event_manager_t;
 struct libvlc_media_t;
 struct libvlc_media_player_t;
 
-class Interface: public QObject
-{
+class Interface: public QObject {
     Q_OBJECT
 public:
     Interface(Player *);
@@ -43,8 +41,6 @@ public slots:
     void trackSlider();
     void getLastTime();
     void eventsEmitter(QString);
-    void enabled3d();
-    //void displayUpdate();
     void updateStatusControlPanel();
     void resizeEvent(QResizeEvent *);
     void changeRatio();
