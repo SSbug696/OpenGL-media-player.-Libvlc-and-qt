@@ -2,6 +2,7 @@
 #include "Mediaplayer.h"
 #include <QList>
 #include <iostream>
+#include <QDebug>
 
 void callbackEvents(const libvlc_event_t *, void *);
 EventsEmitter * e_emitter;
@@ -79,19 +80,18 @@ void EventsEmitter::Opening(){
 
 
 void EventsEmitter::Stopped(){
-   std::cout << "Stopped event \n" << std::endl;
+   qDebug() << "Stopped event \n";
 }
 
 void callbackEvents(const libvlc_event_t *e, void *data){
     MediaPlayer *core = (MediaPlayer *)data;
-    std::cout << "change!" << endl;
     switch(e->type)
       {
       case libvlc_MediaPlayerMediaChanged:
-          std::cout << "emit action \n" << std::endl;
+          qDebug() << "emit action \n";
           break;
       case libvlc_MediaParsedChanged:
-          std::cout << "libvlc_MediaParsedChanged action \n" << std::endl;
+          qDebug() << "libvlc_MediaParsedChanged action \n";
           break;
       case libvlc_MediaPlayerOpening:
           e_emitter->Opening();
@@ -103,22 +103,22 @@ void callbackEvents(const libvlc_event_t *e, void *data){
           e_emitter->Playing();
           break;
       case libvlc_MediaPlayerPaused:
-        std::cout << "MediaPlayerPaused \n" << std::endl;
+          qDebug() << "MediaPlayerPaused \n";
           break;
       case libvlc_MediaPlayerStopped:
           e_emitter->Stopped();
           break;
       case libvlc_MediaPlayerForward:
-          std::cout << "MediaPlayerForward \n" << std::endl;
+          qDebug() << "MediaPlayerForward \n";
           break;
       case libvlc_MediaPlayerBackward:
-          std::cout << "MediaPlayerBackward \n" << std::endl;
+          qDebug() << "MediaPlayerBackward \n";
           break;
       case libvlc_MediaPlayerEndReached:
-          std::cout << "MediaPlayerEndReached \n" << std::endl;
+          qDebug() << "MediaPlayerEndReached \n";
           break;
       case libvlc_MediaPlayerEncounteredError:
-          std::cout << "MediaPlayerEncounteredError \n" << std::endl;
+          qDebug() << "MediaPlayerEncounteredError \n";
           break;
       case libvlc_MediaPlayerTimeChanged:
           e_emitter->TimeChanged();
@@ -127,19 +127,19 @@ void callbackEvents(const libvlc_event_t *e, void *data){
           e_emitter->PositionChanged();
           break;
       case libvlc_MediaPlayerSeekableChanged:
-          std::cout << "MediaPlayerSeekableChanged \n" << std::endl;
+          qDebug() << "MediaPlayerSeekableChanged \n";
           break;
       case libvlc_MediaPlayerPausableChanged:
-          std::cout << "MediaPlayerPausableChanged \n" << std::endl;
+          qDebug() << "MediaPlayerPausableChanged \n";
           break;
       case libvlc_MediaPlayerTitleChanged:
-          std::cout << "MediaPlayerTitleChanged \n" << std::endl;
+          qDebug() << "MediaPlayerTitleChanged \n";
           break;
       case libvlc_MediaPlayerSnapshotTaken:
-          std::cout << "emit action \n" << std::endl;
+          qDebug() << "emit action \n";
           break;
       case libvlc_MediaPlayerLengthChanged:
-          std::cout << "MediaPlayerLengthChanged \n" << std::endl;
+          qDebug() << "MediaPlayerLengthChanged \n";
           break;
       case libvlc_MediaPlayerVout:
           e_emitter->Vout();

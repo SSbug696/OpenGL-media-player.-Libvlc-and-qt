@@ -7,4 +7,4 @@ public:
     Options();
 };
 
-#endif // OPTIONS_H
+#endif

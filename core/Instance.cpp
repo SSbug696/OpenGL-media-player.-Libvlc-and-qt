@@ -3,7 +3,8 @@
 #include <iostream>
 #include <vector>
 #include "Filters.h"
-
+#include <QDebug>
+#include <QString>
 
 Instance::Instance(std::vector<const char *> & filters){
     const char * argv[filters.size()];
@@ -26,10 +27,11 @@ Instance::~Instance(){
 
 void Instance::showActiveModules(){
     libvlc_module_description_t *t =libvlc_video_filter_list_get(_instance);
-    std::cout << (char *)t->psz_longname << std::endl;
-    std::cout << (char *)t->p_next->psz_longname << std::endl;
+    qDebug() << QString::fromStdString( (char *)t->psz_longname );
+    qDebug() << QString::fromStdString( (char *)t->p_next->psz_longname );
+
     while(t){
-        std::cout << (char *)t->psz_shortname << std::endl;
+        qDebug() << QString::fromStdString( (char *)t->psz_shortname );
         t=t->p_next;
      }
 }
