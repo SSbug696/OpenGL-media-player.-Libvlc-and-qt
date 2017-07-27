@@ -1,7 +1,6 @@
 #include "ControlPanel.h"
-
-
 #include <QWidget>
+
 
 ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent)
 {

@@ -3,6 +3,7 @@
 #include <Qt>
 #include <QRect>
 
+
 VideoSlider::VideoSlider(QWidget *parent) : QWidget(parent)
 {
     /*

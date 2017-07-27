@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 #include <QCheckBox>
 
+
 class ControlPanel : public QWidget
 {
     Q_OBJECT

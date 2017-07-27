@@ -1,7 +1,7 @@
 #ifndef VIDEOSLIDER_H
 #define VIDEOSLIDER_H
-
 #include <QWidget>
+
 
 class QSlider;
 

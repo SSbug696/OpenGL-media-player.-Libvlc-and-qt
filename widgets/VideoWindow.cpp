@@ -25,6 +25,7 @@
 #include <QFrame>
 #include <QLayout>
 
+
 VideoWindow::VideoWindow(QWidget *parent) : QWidget(parent)
 {
 
