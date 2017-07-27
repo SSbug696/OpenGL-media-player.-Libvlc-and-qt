@@ -2,6 +2,7 @@
 #define AUDIO_H
 #include <QObject>
 
+
 class MediaPlayer;
 
 struct libvlc_media_player_t;
@@ -12,7 +13,6 @@ class Audio {
 public:
     Audio(libvlc_media_player_t *);
     ~Audio();
-
     bool getMute() const;
     bool toogleMute() const;
     void setVolume(int volume);
@@ -20,7 +20,6 @@ public:
 
 private:
      libvlc_media_player_t * mp;
-
 };
 
 #endif // AUDIO_H

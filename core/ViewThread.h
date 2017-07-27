@@ -22,7 +22,7 @@ public:
     ViewThread(VideoShow *video){
         videoShow = video;
     }
-/*
+/* stub
     void timerEvent(QTimerEvent * ev) {
        if (ev->timerId() == timer.timerId()) nextFrame();
      }

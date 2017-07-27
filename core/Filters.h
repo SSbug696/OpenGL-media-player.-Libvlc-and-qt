@@ -5,6 +5,7 @@
 #include <QMap>
 #include <vector>
 
+
 class Filters {
 public:
     static const int

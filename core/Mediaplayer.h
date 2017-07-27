@@ -23,6 +23,7 @@ struct libvlc_media_t;
 struct libvlc_media_player_t;
 struct libvlc_media_list_player_t;
 
+
 /*!
  * \brief The MediaPlayer class
  */

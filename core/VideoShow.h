@@ -5,12 +5,12 @@
 #include <QWidget>
 #include <QGLWidget>
 #include <QTimer>
-
 #include <QOpenGLTexture>
 #include <QOpenGLWidget>
 #include <QGLFunctions>
 #include <QOpenGLFunctions_3_3_Core>
 #include <QOpenGLFunctions_3_3_Compatibility>
+
 
 class Player;
 class StereoCamera;

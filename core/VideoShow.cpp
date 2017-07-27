@@ -15,6 +15,7 @@
 #include <QDebug>
 #include <iostream>
 
+
 #define OFFSET_BUFFER(bytes) ((GLfloat *)NULL + bytes)
 float   scaleX = 1.0f, scaleY = 1.0f,
         coefX = 1.0,   coefY = 1.0;

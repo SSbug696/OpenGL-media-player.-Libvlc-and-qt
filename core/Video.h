@@ -1,13 +1,13 @@
 #ifndef VIDEO_H
 #define VIDEO_H
-
+#include <QObject>
 
 struct libvlc_media_list_player_t;
 struct libvlc_media_player_has_vout;
 struct libvlc_media_player_t;
 struct libvlc_media_list_t;
 
-#include <QObject>
+
 /*!
  * \brief The Video class
  */

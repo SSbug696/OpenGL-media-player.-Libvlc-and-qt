@@ -2,7 +2,9 @@
 #include <iostream>
 #include <vector>
 #include <QString>
-Filters::Filters(){
+
+
+Filters::Filters() {
     _filters_collection[QString("no-filter")] = 0;
     //_filters_collection[QString("anaglyph-filter")]=14;
 
@@ -24,7 +26,7 @@ Filters::Filters(){
 }
 
 
-void Filters::setFilter(int id){
+void Filters::setFilter(int id) {
      _filters.clear();
 
      if(std::find(_activeFilters.begin(), _activeFilters.end(), id) == _activeFilters.end()){
@@ -44,26 +46,26 @@ void Filters::setFilter(int id){
 }
 
 
-void Filters::updateListFilters(){
+void Filters::updateListFilters() {
     setFilter(0);
 }
 
 
-bool Filters::checkEnable(int id){
+bool Filters::checkEnable(int id) {
     if(std::find(_activeFilters.begin(), _activeFilters.end(), id) == _activeFilters.end()){
         return false;
     } else return true;
 }
 
 
-void Filters::toogleFilter(int id){
+void Filters::toogleFilter(int id) {
     if(std::find(_activeFilters.begin(), _activeFilters.end(), id) == _activeFilters.end()){
         setFilter(id);
     } else removeFilter(id);
 }
 
 
-void Filters::removeFilter(int id ){
+void Filters::removeFilter(int id ) {
     if(std::find(_activeFilters.begin(), _activeFilters.end(), id) != _activeFilters.end()){
         _activeFilters.erase(_activeFilters.begin()+1);
         updateListFilters();
@@ -71,6 +73,6 @@ void Filters::removeFilter(int id ){
 }
 
 
-std::vector<const char *> & Filters::getArgv(){
+std::vector<const char *> & Filters::getArgv() {
     return _filters;
 }

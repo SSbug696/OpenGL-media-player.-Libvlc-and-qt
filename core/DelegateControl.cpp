@@ -1,6 +1,7 @@
 #include "DelegateControl.h"
 #include "Mediaplayer.h"
 
+
 DelegateControl::DelegateControl(Mediaplayer * mp){
     _mp = mp;
 }

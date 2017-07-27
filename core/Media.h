@@ -1,6 +1,5 @@
 #ifndef MEDIA_H
 #define MEDIA_H
-
 #include <QObject>
 
 struct libvlc_event_t;

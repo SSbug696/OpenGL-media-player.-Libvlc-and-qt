@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 Player::Player(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Player){

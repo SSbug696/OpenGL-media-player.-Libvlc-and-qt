@@ -1,8 +1,8 @@
 #ifndef INSTANCE_H
 #define INSTANCE_H
-
 #include <QObject>
 #include <QMap>
+
 
 class Filters;
 struct libvlc_module_description_t;

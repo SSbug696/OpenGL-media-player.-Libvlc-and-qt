@@ -6,6 +6,7 @@
 #include <vlc/vlc.h>
 #include <vlc/libvlc_events.h>
 
+
 struct libvlc_event_t;
 class  Interface;
 

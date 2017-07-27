@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QDebug>
 
+
 void callbackEvents(const libvlc_event_t *, void *);
 EventsEmitter * e_emitter;
 

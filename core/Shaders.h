@@ -39,8 +39,6 @@ const char * FProgram = "\
            }";
 
 
-/*vec4(color_r.r, 1.0, 1.0, 1.0)*/
-
  const char* YUV420P_VS ="\
             varying vec4 pos;\
             varying vec4 color;\

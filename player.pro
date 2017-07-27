@@ -5,9 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
 QMAKE_CXXFLAGS+= -std=c++0x -pthread
 QMAKE_LFLAGS +=  -std=c++0x -pthread
 
@@ -54,7 +52,6 @@ HEADERS  += \
     core/Shaders.h
 
 FORMS    += forms/player.ui
-
 RESOURCES += \
 
 

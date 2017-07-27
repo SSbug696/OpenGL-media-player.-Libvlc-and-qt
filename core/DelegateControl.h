@@ -1,6 +1,5 @@
 #ifndef DELEGATECONTROL_H
 #define DELEGATECONTROL_H
-
 #include <QObject>
 
 struct libvlc_event_t;

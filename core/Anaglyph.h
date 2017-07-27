@@ -16,7 +16,6 @@ private:
     float _mNearClippingDistance;
     float _mFarClippingDistance;
 
-
     float _rtop, _rbottom, _rleft, _rright,
             _ltop, _lbottom, _lleft, _lright;
 

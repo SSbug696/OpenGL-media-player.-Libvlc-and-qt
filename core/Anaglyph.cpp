@@ -3,6 +3,7 @@
 #include <math.h>
 #include <iostream>
 
+
 Anaglyph::Anaglyph(float Convergence,
                    float EyeSeparation,
                    float AspectRatio,
@@ -58,7 +59,6 @@ void Anaglyph::ApplyLeftFrustum() {
     glLoadIdentity();
     glTranslatef(_mEyeSeparation/2, 0.0f, 0.0f);
 }
-
 
 void Anaglyph::ApplyRightFrustum()
 {

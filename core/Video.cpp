@@ -3,6 +3,7 @@
 #include <iostream>
 #include <QDebug>
 
+
 Video::Video(QObject *parent) : QObject(parent)
 {}
 

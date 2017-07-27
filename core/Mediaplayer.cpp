@@ -41,6 +41,7 @@ unsigned char * data_pixels = new unsigned char[ WIDTH *  HEIGHT * 3];
 
 bool status=false;
 
+
 /*!
  * \brief MediaPlayer::MediaPlayer
  * \param instance
