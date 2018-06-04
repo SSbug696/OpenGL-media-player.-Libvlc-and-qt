@@ -6,3 +6,6 @@
 ###### To read the stream using VLC. Converting to GLSL shaders version 2.0.
 
 ####### Details showed on scheme ( scheme.png )
+
+The player does not have a design, so the interface is only for testing =)
+
