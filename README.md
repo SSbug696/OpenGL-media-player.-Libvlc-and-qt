@@ -1,3 +1,7 @@
+<h1 align=center>
+<img src="logo/1024 Logotype.svg" width=80%>
+</h1>
+
 [![CodeFactor](https://www.codefactor.io/repository/github/ssbug696/opengl-media-player.-libvlc-and-qt/badge)](https://www.codefactor.io/repository/github/ssbug696/opengl-media-player.-libvlc-and-qt)
 
 #### Simple and efficient media player(qt,libvlc & c++)
